@@ -1,0 +1,169 @@
+'''INTRODUCTION'''
+# Say "Hello, World!" With Python 
+print("Hello, World!")
+
+
+# Python If-Else
+n = int(input().strip())
+    if n%2 == 0:
+        if n in range(2,6):
+            print("Not Weird")
+        elif n in range(6,21):
+            print("Weird")
+        elif n>20:
+            print("Not Weird")
+    else:
+        print("Weird")
+
+
+# Arithmetic Operators
+    a = int(input())
+    b = int(input())
+    
+    # sum
+    print(a+b)
+    # difference
+    print(a-b)
+    # product
+    print(a*b)
+
+
+# Python : Division
+    a = int(input())
+    b = int(input())
+    
+    # integer division
+    print(a//b)
+    # float division
+    print(a/b)
+
+
+# Loops
+    n = int(input())
+    for i in range(n):
+        print(i**2)
+
+
+# Print Function
+    n = int(input())
+    for i in range(1,n+1):
+        print(i, end = "")
+
+
+# Write a Function
+def is_leap(year):
+    leap = False
+    
+    if (year%4 == 0 and year%100 != 0) or (year%400 == 0):
+            leap = True
+        
+    return leap
+
+year = int(input())
+print(is_leap(year))
+
+
+'''BASIC DATA TYPES'''
+# List Comprehensions
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    print([ [i,j,k]for i in range(x+1) for j in range(y+1) for k in range(z+1) if i+j+k!=n])
+
+
+# Find the Runner-Up Score!
+    n = int(input())
+    arr = map(int, input().split())
+    
+    # convert arr into list
+    arr = list(arr)
+    
+    # remove duplicates
+    distinct_arr = list(set(arr)) 
+    
+    # find winner_score
+    top_score = max(distinct_arr) 
+    
+    while top_score in arr:
+        # remove winner_score from original array
+       arr.remove(top_score)
+    # print the max_score(runner_score) after removing winner_score
+    print(max(arr))
+
+
+# Lists
+    N = int(input())
+    sample_list = []
+    
+    for i in range(N):
+        command = list(input().split())
+        if command[0].lower() == 'insert':
+            sample_list.insert(int(command[1]), int(command[2]))
+            
+        elif command[0].lower() == 'print':
+            print(sample_list)
+            
+        elif command[0].lower() == 'remove':
+            sample_list.remove(int(command[1]))
+            
+        elif command[0].lower() == 'append':
+            sample_list.append(int(command[1]))
+            
+        elif command[0].lower() == 'sort':
+            sample_list.sort()
+            
+        elif command[0].lower() == 'pop':
+            sample_list.pop()
+            
+        elif command[0].lower() == 'reverse':
+            sample_list.reverse()
+
+
+# Tuples
+    n = int(input())
+    integer_tuple = tuple(map(int, input().split()))
+    print(hash(integer_tuple))
+
+
+# Nested Lists
+    name_list = []
+    score_list = []
+    n = int(input())
+    
+    for i in range(n):
+        name = input()
+        name_list.append(name)
+
+        score = float(input())
+        score_list.append(score)
+        
+    second_low_score = sorted(list(set(score_list)))[1]
+    
+    output = list(zip(name_list, score_list))
+    
+    second_low_scorers = []
+    
+    for item in output:
+        if item[1] == second_low_score:
+            second_low_scorers.append(item[0])
+            
+    for record in sorted(second_low_scorers):
+        print(record)
+
+
+# Finding the Percentage
+    n = int(input())
+    student_marks = {}
+    for i in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    
+    for i,j in student_marks.items():
+        if i == query_name:
+            print(format((sum(j)/len(j)),".2f"))
+
+
+
