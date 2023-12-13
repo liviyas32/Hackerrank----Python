@@ -8,4 +8,16 @@ if __name__ == '__main__':
         print(ans)
 
 
-# 
+# swapcase
+def swap_case(s):
+    string = ''
+    for i in s:
+        if i.islower() == True:
+            string = string + i.upper()
+        else:
+            string = string + i.lower()
+    
+    return string
+
+
+
