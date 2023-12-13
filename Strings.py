@@ -20,4 +20,8 @@ def swap_case(s):
     return string
 
 
+# string split and join
+def split_and_join(line):
+    result = "-".join(line.split())
+    return result
 
