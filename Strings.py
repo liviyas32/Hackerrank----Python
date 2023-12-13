@@ -31,3 +31,11 @@ def print_full_name(first, last):
     print(f'Hello {first} {last}! You just delved into python.')
 
 
+# Mutations
+def mutate_string(string, position, character):
+    altered_string = list(string)
+    altered_string[position] = character
+    result = ''.join(altered_string)
+    return result
+
+# replace can't be used as the position is given instead of the value to be changed.
