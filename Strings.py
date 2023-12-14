@@ -55,3 +55,13 @@ def count_substring(string, sub_string):
                 count += 1
     return count
 
+
+# Text Wrap
+import textwrap
+
+def wrap(string, max_width):
+    wrapper = textwrap.TextWrapper(width = max_width)
+    result = wrapper.fill(text = string)
+    return result
+
+
