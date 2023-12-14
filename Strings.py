@@ -65,3 +65,13 @@ def wrap(string, max_width):
     return result
 
 
+# Capitalize!
+def solve(s):
+    str_list = []
+    for i in s.split(' '):
+        i = i.capitalize()
+        str_list.append(i)
+    result = ' '.join(str_list)
+    return result
+
+
